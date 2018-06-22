@@ -33,7 +33,7 @@ var readingList = [
 ]
 
 for (var i = 0; i < readingList.length; i++) {
-  if (readingList[i].alreadyRead === true) {
+  if (readingList[i].alreadyRead) {
     console.log("You already read " + readingList[i].title + " by " + readingList[i].author);
   }
   else {
@@ -64,6 +64,6 @@ var movieList = [
 
 var showMovies = function() {
   for (var i = 0; i < movieList.length; i++) {
-      console.log(movieList[i].title + " lasts for " +  movieList[i].duration + " minutes. Stas: " + movieList[i].stars + ".");
+      console.log(movieList[i].title + " lasts for " +  movieList[i].duration + " minutes. Stars: " + movieList[i].stars + ".");
   }
 }
