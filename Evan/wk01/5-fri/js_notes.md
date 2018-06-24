@@ -262,4 +262,17 @@ fizzBuzz(3)
 
 fizzBuzz(15)
 // => prints "FizzBuzz" to the console
+
+var fizzBuzz = function(gameNumber) {
+  if (gameNumber % 3 === 0 && gameNumber % 5 === 0) {
+    return console.log('fizzbuzz');
+  } else if (gameNumber % 3 === 0) {
+    return console.log('fizz');
+  } else if (gameNumber % 5 === 0) {
+    return console.log('buzz');
+  }
+  else {
+    return console.log(gameNumber);
+  }
+}
 ```
