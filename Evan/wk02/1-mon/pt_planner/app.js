@@ -1,4 +1,4 @@
-console.log('coffee on the train...');
+console.log('coffee on the train...\n\n');
 
 // Alamein line:
 // Flinders - Richmond - East Richmond - Burnley - Hawthorn - Glenferrie
@@ -10,10 +10,9 @@ console.log('coffee on the train...');
 // Southern Cross - Richmond - South Yarra - Prahran - Windsor
 
 
-var origin = 'Flagstaff';
-var destination = 'Windsor';
+var origin = 'Southern Cross';
+var destination = 'Glenferrie';
 var lineLabel = 'Current Line';
-// Set starting value of total stops to -1 to prevent counting origin as a stop
 var totalStops = -1;
 var directions = [];
 
@@ -49,20 +48,39 @@ var sandringhamLine = [
 // Question - to prevent needing to check multiple other arrays,
 // can all the lines be stored as nested arrays in a 'trainLines' array?
 // so that you can find destination from other remaining arrays?
-
 // function parameters needed
 // current line, origin, destination
 
-// HOW TO CHECK IF THE DESTINATION REQUIRES 'BACKWARDS' TRAVEL, (for >= i--) ?
-// if destination index is < origin index
-// reverse for loop to create 'backwards' directions
+// USING Object.keys and forEach to loop through arrays by key name
+// {"alamein": [1,2,3], "something": [4,5,6]}
+// {alamein: Array(3), something: Array(3)}
+// var trainLines = {"alamein": [1,2,3], "something": [4,5,6]}
+// undefined
+// trainLines.keys()
+// (anonymous) @ VM95:1
+// Object.keys(trainLines)
+// (2) ["alamein", "something"]
+// Object.keys(trainLines).forEach(function(name) {
+//   console.log(trainLines[name])
+// })
+// VM115:2 (3) [1, 2, 3]
+// VM115:2 (3) [4, 5, 6]
 
 // -----------------------------------------------------------
+
 function noTransfers(currentLine, origin, destination) {
   directions = [];
-  for (var i = currentLine.indexOf(origin); i <= currentLine.indexOf(destination); i++) {
-    directions.push(currentLine[i]);
-    totalStops++;
+  // check travel direction
+  if (currentLine.indexOf(origin) < currentLine.indexOf(destination)){
+    for (var i = currentLine.indexOf(origin); i <= currentLine.indexOf(destination); i++) {
+      directions.push(currentLine[i]);
+      totalStops++;
+    }
+  } else {
+    for (var i = currentLine.indexOf(origin); i >= currentLine.indexOf(destination); i--) {
+      directions.push(currentLine[i]);
+      totalStops++;
+    }
   }
   console.log(directions.join(' ---> '));
   console.log('Total stops: ' + totalStops);
@@ -71,14 +89,19 @@ function noTransfers(currentLine, origin, destination) {
 
 function toRichmond(currentLine, origin, destination) {
   totalStops--;
-  for (var i = currentLine.indexOf(origin); i <= currentLine.indexOf(destination); i++) {
-    directions.push(currentLine[i]);
-    totalStops++;
+  // check travel direction
+  if (currentLine.indexOf(origin) < currentLine.indexOf(destination)){
+    for (var i = currentLine.indexOf(origin); i <= currentLine.indexOf(destination); i++) {
+      directions.push(currentLine[i]);
+      totalStops++;
+    }
+  } else {
+    for (var i = currentLine.indexOf(origin); i >= currentLine.indexOf(destination); i--) {
+      directions.push(currentLine[i]);
+      totalStops++;
+    }
   }
 }
-
-// FOR STARTING AT RICHMOND ...
-// check what line destination is in and create single directions list
 
 //IF DESTINATION IS ORIGIN
 if (origin === destination) {
@@ -89,24 +112,21 @@ if (origin === destination) {
 else if (origin === 'Richmond') {
   console.log('Origin: ' + origin + '\nDestination: ' + destination + '\n\n');
   if (alameinLine.indexOf(destination) != -1) {
-    //display stops between destination and origin using indexof
     lineLabel = 'Alamein Line';
     console.log(lineLabel);
-    fromRichmond(alameinLine, origin, destination);
+    noTransfers(alameinLine, 'Richmond', destination);
   } else if (glenWaverlyLine.indexOf(destination) != -1) {
-    //display stops between destination and origin using indexof
     lineLabel = 'Glen Waverly Line';
     console.log(lineLabel);
     noTransfers(glenWaverlyLine, 'Richmond', destination);
   } else {
-    //display stops between destination and origin using indexof
     lineLabel = 'Sandringham Line';
     console.log(lineLabel);
     noTransfers(sandringhamLine, 'Richmond', destination);
   }
 }
 
-// IF ORIGIN IS ON ALAMEIN LINE ---------------------------
+// IF ORIGIN IS ON ALAMEIN LINE
 else if (alameinLine.indexOf(origin) != -1) {
   console.log('Origin: ' + origin + '\nDestination: ' + destination + '\n\n');
   lineLabel = 'Alamein Line';
@@ -133,7 +153,7 @@ else if (alameinLine.indexOf(origin) != -1) {
 }
 // END ALAMEIN LINE CHECKS ---------------------------------
 
-// IF ORIGIN IS ON GW LINE -- if origin is on current line
+// IF ORIGIN IS ON GW LINE
 else if (glenWaverlyLine.indexOf(origin) != -1) {
   console.log('Origin: ' + origin + '\nDestination: ' + destination + '\n\n');
   lineLabel = 'Glen Waverly Line';
@@ -158,9 +178,9 @@ else if (glenWaverlyLine.indexOf(origin) != -1) {
     }
   }
 }
-// END FUNCTION ?? --------------------------------------
+// END GLEN WAVERLY LINE CHECKS --------------------------------------
 
-// IF ORIGIN IS ON SANDRINGHAM LINE -- if origin is on current line ---
+// IF ORIGIN IS ON SANDRINGHAM LINE
 else if (sandringhamLine.indexOf(origin) != -1) {
   console.log('Origin: ' + origin + '\nDestination: ' + destination + '\n\n');
   lineLabel = 'Sandringham Line';
@@ -177,15 +197,15 @@ else if (sandringhamLine.indexOf(origin) != -1) {
     if (alameinLine.indexOf(destination) != -1) {
       lineLabel = 'Alamein Line';
       console.log('Transfer to Alamein Line');
-      fromRichmond(alameinLine, origin, destination);
+      noTransfers(alameinLine, 'Richmond', destination);
     } else {
       lineLabel = 'Glen Waverly Line';
       console.log('Transfer to ' + lineLabel);
-      fromRichmond(glenWaverlyLine, origin, destination);
+      noTransfers(glenWaverlyLine, 'Richmond', destination);
     }
   }
 }
-// END SANDRINGHAM LINE CHECKS -----------
+// END SANDRINGHAM LINE CHECKS --------------------------------------
 else {
   console.log('! no origin !');
 }

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header h1, h2 {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  background-color: lightyellow;
+}
+
+nav li {
+  list-style: none;
+  display: inline;
+  width: 100%;
+  justify-content: space-between;
+}
+
+main {
+  display: flex;
+  background-color: lightblue;
+}
+
+.blog {
+  width: 70%;
+}
+
+aside {
+  width: 30%;
+}

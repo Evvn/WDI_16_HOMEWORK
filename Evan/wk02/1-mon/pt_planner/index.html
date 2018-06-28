@@ -8,6 +8,7 @@
       background-image: url(images/train.gif);
       background-repeat: repeat;
       background-size: 200px;
+      font-family: monospace;
     }
     h1 {
       margin: 0;
@@ -16,11 +17,67 @@
       text-align: center;
       width: 50px;
       font-size: 50px;
+      float: left;
+    }
+    .journeyPlanner {
+      text-align: center;
+      background-color: lightpink;
+      width: 500px;
+      height: 300px;
+      margin: auto;
+      padding: 20px;
+      border: 10px white dashed;
     }
     </style>
   </head>
   <body>
     <h1>P<br>T<br> <br>P<br>L<br>A<br>N<br>N<br>E<br>R</h1>
+
+    <div class="formBox">
+      <div class="journeyPlanner">
+        <h2>Journey Planner</h2>
+        <form>
+          <p>Origin station:</p>
+          <select class="originStation" name="originStation">
+            <option value="Burnley">Burnley</option>
+            <option value="East Richmond">East Richmond</option>
+            <option value="Flagstaff">Flagstaff</option>
+            <option value="Flinders">Flinders</option>
+            <option value="Glenferrie">Glenferrie</option>
+            <option value="Hawthorn">Hawthorn</option>
+            <option value="Kooyong">Kooyong</option>
+            <option value="Melbourne Central">Melbourne Central</option>
+            <option value="Parliament">Parliament</option>
+            <option value="Prahran">Prahran</option>
+            <option value="Richmond">Richmond</option>
+            <option value="South Yarra">South Yarra</option>
+            <option value="Southern Cross">Southern Cross</option>
+            <option value="Tooronga">Tooronga</option>
+            <option value="Windsor">Windsor</option>
+          </select>
+          <p>Destination station:</p>
+          <select class="destinationStation" name="destinationStation">
+            <option value="Burnley">Burnley</option>
+            <option value="East Richmond">East Richmond</option>
+            <option value="Flagstaff">Flagstaff</option>
+            <option value="Flinders">Flinders</option>
+            <option value="Glenferrie">Glenferrie</option>
+            <option value="Hawthorn">Hawthorn</option>
+            <option value="Kooyong">Kooyong</option>
+            <option value="Melbourne Central">Melbourne Central</option>
+            <option value="Parliament">Parliament</option>
+            <option value="Prahran">Prahran</option>
+            <option value="Richmond">Richmond</option>
+            <option value="South Yarra">South Yarra</option>
+            <option value="Southern Cross">Southern Cross</option>
+            <option value="Tooronga">Tooronga</option>
+            <option value="Windsor">Windsor</option>
+          </select><br><br>
+          <input type="submit" name="submit" value="Plan">
+        </form>
+      </div>
+    </div>
+
 <script src="app.js" charset="utf-8"></script>
   </body>
 </html>

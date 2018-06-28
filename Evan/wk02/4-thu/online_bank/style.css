@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+background: linear-gradient(to left, #fecbff, #9fabfa);
+font-family: monospace;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 4%
+}
+
+.logo {
+  height: 175px;
+  width: auto;
+}
+
+.spacer {
+  height: 175px;
+  width: 261px;
+}
+
+.accounts {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.savings {
+  width: 250px;
+  height: 250px;
+  background-color: #fecbff;
+  border: 10px #36f3ff ridge;
+  border-radius: 10px;
+  margin: 4%;
+}
+
+.checking {
+  width: 250px;
+  height: 250px;
+  background-color: #9fabfa;
+  border: 10px #36f3ff ridge;
+  border-radius: 10px;
+  margin: 4%;
+}
+
+.savings-color {
+  font-size: 225%;
+}
+
+.checking-color {
+  font-size: 225%;
+}

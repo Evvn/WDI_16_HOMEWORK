@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Online Bank</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <div class="header">
+      <img class="logo" src="piggy_bank.gif" alt="Bank logo">
+      <h1 class="title">piggy_bank</h1>
+      <div class="spacer"></div>
+    </div>
+
+    <div class="accounts">
+      <div class="savings">
+        <h2>savings</h2>
+        <p>your balance is</p>
+        <p class="savings-color">$<span class="savings-balance">0.00</span></p>
+        <input class="savings-input" type="number"><br><br>
+        <button class="savings-withdraw" type="button" name="button">withdraw</button>
+        <button class="savings-deposit" type="button" name="button">deposit</button>
+      </div>
+
+      <div class="checking">
+        <h2>checking</h2>
+        <p>your balance is</p>
+        <p class="checking-color">$<span class="checking-balance">0.00</span></p>
+        <input class="checking-input" type="number"><br><br>
+        <button class="checking-withdraw" type="button" name="button">withdraw</button>
+        <button class="checking-deposit" type="button" name="button">deposit</button>
+      </div>
+
+    </div>
+  <script src="app.js" charset="utf-8"></script>
+  </body>
+</html>
