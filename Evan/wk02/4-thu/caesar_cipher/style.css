@@ -1,0 +1,67 @@
+body {
+  font-family: monospace;
+  background: linear-gradient(to left, lightblue, #71c8ff, #dda5fb);
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+}
+
+h1 {
+  align-self: flex-start;
+}
+
+.date {
+  align-self: flex-end;
+  font-weight: bold;
+}
+
+.message-input {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.shift-number {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.encode {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+  margin-right: 48px;
+}
+
+.decode {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+}
+
+.secretMessage-output {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 14px;
+  background-color: white;
+  width: 165px;
+  margin: 0 auto;
+}

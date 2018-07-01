@@ -17,6 +17,8 @@ font-family: monospace;
 .logo {
   height: 175px;
   width: auto;
+  border: 10px white ridge;
+  border-radius: 10px;
 }
 
 .spacer {
@@ -50,9 +52,26 @@ font-family: monospace;
 }
 
 .savings-color {
-  font-size: 225%;
+  font-size: 200%;
 }
 
 .checking-color {
-  font-size: 225%;
+  font-size: 200%;
+}
+
+button {
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+}
+
+input {
+  text-align: center;
+  font-weight: bold;
+  font-family: monospace;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
 }
