@@ -20,6 +20,7 @@ var gameBoard = {
 }
 
 var enemyImage = "<img class='enemy' src='enemy.gif'>"
+var explosionImage = "<img class='explosion' src='explosion.gif'>"
 var enemy = document.querySelector('.enemy')
 var score = document.querySelector('.score')
 var highScore = document.querySelector('.high-score')
@@ -39,6 +40,7 @@ document.addEventListener('click',function(element){
       startCountdown()
     }
     else if(element.target.className == 'enemy'){
+      explodeEnemy()
       moveEnemy()
     }
  })
@@ -75,6 +77,16 @@ function newSquare() {
   return gameBoard[random].innerHTML = enemyImage
 }
 
+function explodeEnemy() {
+  document.querySelector('.enemy').parentElement.style = "background-image: url('explosion.gif'); background-size: 50px 50px; background-repeat: no-repeat"
+  setTimeout(function(){
+    var gameBoard = document.querySelector('.game-board').children
+    for (var i = 0; i < gameBoard.length; i++) {
+      gameBoard[i].style = ''
+    }
+  }, 700)
+}
+
 // to find enemy position and remove contents of parent div
 function removeEnemy() {
   document.querySelector('.enemy').parentElement.innerHTML = ''
@@ -87,6 +99,7 @@ function moveEnemy() {
 }
 
 // bugs/ to do
+// better explosion logic, not using backgrounds
 // make blinking start button 100% clickable
 // if/else to check if new square is same as previous to prevent overlap
-// MAYBE on click of enemy, reset timer with .1s less total time
+// levels? if timer reaches 0 and score > some#, add more time to play
