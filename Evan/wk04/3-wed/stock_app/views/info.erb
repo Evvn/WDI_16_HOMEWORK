@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stock Info</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    <h1><%= @stock.company_name %> | <%= @ticker %></h1>
+
+    <p>High: <%= @stock.high %></p>
+    <p>Low: <%= @stock.low %></p>
+    <p>Current: <%= @stock.iex_realtime_price %></p>
+    <p>Time of check: <%= Time.now %></p>
+
+  </body>
+</html>
