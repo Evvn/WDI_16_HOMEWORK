@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+        <% if @bottles > 0 %>
+        <p><%= @bottles %> bottles of <b>Drink&trade;</b> on the wall.</p>
+
+          <a href="<%= @bottles - 1 %>">Remove one from the place where they are; on the wall.</a>
+        <% else %>
+
+        <p>There are no more bottles of <b>Drink</b>&trade; on the wall.</p>
+
+        <a href="/">Contact the <b>Supplier&copy;</b> and restock your empty wall. </a>
+
+        <% end %>
+
+    </div>
+
+  </body>
+</html>

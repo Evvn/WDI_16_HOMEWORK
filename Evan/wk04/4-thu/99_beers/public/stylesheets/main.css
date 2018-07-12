@@ -1,0 +1,60 @@
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 300%;
+  font-family: Helvetica, sans-serif;
+  color: oldlace;
+  background: radial-gradient(midnightblue,
+  cornflowerblue,
+  rebeccapurple,
+  palevioletred,
+  lightskyblue,
+  mediumaquamarine,
+  lightcoral,
+  darkslateblue,
+  mistyrose,
+  mintcream,
+  blanchedalmond,
+  papayawhip);
+  background-size: 400vh 400vw;
+  -webkit-animation: AnimationName 5s ease infinite;
+  -moz-animation: AnimationName 5s ease infinite;
+  animation: AnimationName 5s ease infinite;
+}
+
+a {
+  text-decoration: none;
+  color: yellow;
+  transition: 1s ease all;
+}
+
+a:hover{
+  color: orange;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}

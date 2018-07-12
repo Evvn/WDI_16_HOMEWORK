@@ -7,11 +7,12 @@
   </head>
   <body>
 
-    <h1><%= @stock.company_name %> | <%= @ticker %></h1>
+    <h1><%= @stock.company_name %> | <%= @stock.symbol %></h1>
 
+    <p>Latest price: <span <%= @latest =>><%= @stock.latest_price %></span></p>
+    <p>Opening price: <%= @stock.open %></p>
     <p>High: <%= @stock.high %></p>
     <p>Low: <%= @stock.low %></p>
-    <p>Current: <%= @stock.iex_realtime_price %></p>
     <p>Time of check: <%= Time.now %></p>
 
   </body>
