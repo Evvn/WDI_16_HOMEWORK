@@ -5,7 +5,7 @@ class Client
     @children = children
     @age = age
     @pets = pets
-
+    @clients_pets = []
     return self
   end
 
@@ -17,8 +17,14 @@ class Client
     return @pets
   end
 
+  def pet_names
+    @pets.each do |p|
+      @clients_pets.push p.name
+    end
+    return @clients_pets.uniq
+  end
+
   def info
-    @clients_pets = []
     @pets.each do |p|
       @clients_pets.push p.name
     end

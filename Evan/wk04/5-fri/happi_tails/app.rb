@@ -26,6 +26,7 @@ end
 
 # methods for each menu input
 def display_animals(shelter)
+  puts "Shelter animals:\n"
   shelter[:animals].each do |animal|
     print "#{ animal.name }, "
   end
@@ -52,6 +53,7 @@ def display_animals(shelter)
 end
 
 def display_clients(shelter)
+  puts "Shelter clients:\n"
   shelter[:clients].each do |client|
     print "#{ client.name }, "
   end
@@ -164,15 +166,55 @@ def adoption(shelter)
   # Remove animal from shelter hash via animal ID
   shelter[:animals].delete_at animal_id
 
-  print "\n#{ client } adopted #{ animal }!"
+  puts "\n#{ client } adopted #{ animal }!"
 
-  puts ""
   return menu shelter
 end
 
 def surrender(shelter)
+  puts "Shelter clients:\n"
+  shelter[:clients].each do |client|
+    print "#{ client.name }, "
+  end
 
-  puts ""
+  # prompt retrieving client info
+  puts "\n\nSelect a client name to retrieve pets [name, exit]"
+  info_id = gets.chomp
+  if info_id == 'exit'
+    return menu shelter
+  end
+
+  # Add all client names to an array
+  client_names = []
+  shelter[:clients].each do |c|
+    client_names.push c.name
+  end
+
+  # Check index number of client to create ID
+  client_id = client_names.index info_id
+
+  # Use client_id to print info of clients pets from {shelter}
+  print "\nPets:\n"
+  puts shelter[:clients][client_id].pet_names.join ', '
+
+  puts "\nSelect a pet to surrender for adoption [name, exit]"
+  surrendered_pet = gets.chomp
+
+  if surrendered_pet == 'exit'
+    return menu shelter
+  end
+
+  # logic to remove pet from client [pets], and add to {shelter}
+  surrendered_id = shelter[:clients][client_id].pet_names.index surrendered_pet
+
+  # add pet to {shelter}
+  shelter[:animals].push shelter[:clients][client_id].pets[surrendered_id]
+
+  # remove pet from client [pets]
+  shelter[:clients][client_id].pets.delete_at surrendered_id
+
+  puts "\n#{ info_id } surrendered #{ surrendered_pet } for adoption!"
+
   return menu shelter
 end
 
