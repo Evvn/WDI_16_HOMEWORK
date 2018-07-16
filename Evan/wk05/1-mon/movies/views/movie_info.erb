@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body style="background-image: url(<%= @movie['Poster'] %>)">
+    <div class="main">
+
+      <h1>Moovies <img src="images/cow.gif"></h1>
+
+      <div class="info">
+        <h2><%= @movie['Title'] %></h2>
+        <h4><%= @movie['Released'] %></h4>
+        <p><%= @movie['Ratings'][1]['Value'] %> - Rotton Tomatoes || Runtime: <%= @movie['Runtime'] %> </p>
+        <p><%= @movie['Plot'] %></p>
+        <p><b>Starring:</b> <i><%= @movie['Actors'] %></i></p>
+      </div>
+
+      </div>
+  </body>
+</html>
