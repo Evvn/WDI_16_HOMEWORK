@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="stylesheets/main.css">
+  </head>
+  <body>
+    <div class="main">
+
+      <h1>Moovies <img src="images/cow.gif"></h1>
+
+      <div class="info">
+        <% @search['Search'].each do |result| %>
+        <img src="<%= result['Poster'] %>">
+        <a href="/movie_info?movie_name=<%= result['Title'] %>"><%= result['Title'] %></a>
+        <br>
+        <% end %>
+      </div>
+
+      <form action="/" method="get">
+        <button>Moo again 🐄</button>
+      </form>
+
+      </div>
+  </body>
+</html>
