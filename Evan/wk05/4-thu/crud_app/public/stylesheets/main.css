@@ -1,0 +1,79 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #171717;
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  min-width: 300px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "header header header header" "glow_box glow_box glow_box glow_box" "footer footer footer footer";
+  background-color: #171717;
+  color: white;
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.glow_box {
+  grid-area: glow_box;
+  border: 10px solid white;
+  background: linear-gradient(314deg, rgb(27, 201, 216), rgb(212, 129, 227), rgb(216, 187, 222)) 0% 0% / 300% 300%;
+  animation: CustomAnimation 15s ease infinite;
+  color: #171717;
+  height: 70vh;
+  width: 70vh;
+  min-height: 300px;
+  min-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4vh;
+  font-weight: bold;
+}
+
+.items {
+  grid-area: glow_box;
+}
+
+@keyframes CustomAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: .5s ease all;
+}
+
+.footer a:hover {
+  color: #f1c4fb;
+}

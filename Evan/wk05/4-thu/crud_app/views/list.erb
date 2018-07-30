@@ -1,0 +1,25 @@
+<div class="grid-container">
+
+  <div class="header">
+    <h1>Database manipulation.</h2>
+  </div>
+
+  <a href="/items/new">post new item</a>
+
+  <div class="items">
+  <% @items.each do |item| %>
+
+  <p>
+    <img src="<%= item['image_url'] %>" alt="" height=100px;>
+    <a href="/items/<%= item['id'] %>">
+      <%= item['name'] %>
+    </a>
+  </p>
+
+  <% end %>
+
+  </div>
+  <div class="footer">
+    <h2><a href="/">Make a &#162;hange &rarr;</a></h2>
+  </div>
+</div>

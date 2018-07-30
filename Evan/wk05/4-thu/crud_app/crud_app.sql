@@ -1,0 +1,15 @@
+CREATE DATABASE crud_app;
+
+CREATE TABLE item (
+  id SERIAL4 PRIMARY KEY,
+  name VARCHAR(100),
+  price DECIMAL(18,2),
+  image_url VARCHAR(400)
+);
+
+CREATE TABLE comments (
+  id SERIAL4 PRIMARY KEY,
+  content TEXT NOT NULL,
+  item_id INTEGER NOT NULL,
+  FOREIGN KEY (item_id) REFERENCES item (id) ON DELETE RESTRICT
+);

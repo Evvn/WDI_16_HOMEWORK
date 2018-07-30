@@ -1,0 +1,152 @@
+@import url('//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css');
+
+@font-face {
+  font-family: clipneon;
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/707108/clip.ttf);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.grid-container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "header header header header" "glow_box glow_box glow_box glow_box" "footer footer footer footer";
+  background-color: #171717;
+  color: white;
+  font-family: sans-serif;
+}
+
+.header {
+  grid-area: header;
+}
+
+.neon {
+    /* -webkit-transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+    /* transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+    margin-top: 20px;
+    margin-left: 20px;
+    color: #F0D6DE;
+    font-family: clipneon;
+    font-size: 5vw;
+    line-height: 6vw;
+    margin-right: 2vw;
+    text-shadow:
+    .1vw 0vw .25vw #F0D6DE, .2vw 0vw .25vw #F0D6DE, .4vw 0vw .25vw #F0D6DE,
+    .1vw 0vw .1vw #F181B2, .2vw 0vw 0vw #F181B2, .4vw 0vw 0vw #F181B2,
+    .1vw 0vw .1vw #F181B2, .2vw 0vw .1vw #F181B2, .4vw 0vw 0vw #F181B2,
+    .1vw 0vw 1vw #F181B2, .2vw 0vw 2vw #F181B2, .4vw 0vw 2vw #F181B2, .2vw 0vw 5vw #F181B2,
+    .1vw 0vw .5vw #F20B70, .2vw 0vw .5vw #F20B70, .4vw 0vw 6vw #F20B70,
+    .1vw 0vw 4vw #F20B70, .2vw 0vw 20vw #F20B70, .4vw 0vw 10vw #F20B70,
+    .1vw 0vw 10vw #F20B70, .2vw 0vw 30vw #F20B70, .4vw 0vw 10vw #F20B70;
+  }
+
+  .neon2 {
+      /* -webkit-transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+      /* transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+      margin-top: 20px;
+      margin-left: 20px;
+      color: #b4dcff;
+      font-family: clipneon;
+      font-size: 5vw;
+      line-height: 6vw;
+      margin-right: 2vw;
+      text-shadow:
+      .1vw 0vw .25vw #b4dcff, .2vw 0vw .25vw #b4dcff, .4vw 0vw .25vw #b4dcff,
+      .1vw 0vw .1vw #65b4fa, .2vw 0vw 0vw #65b4fa, .4vw 0vw 0vw #65b4fa,
+      .1vw 0vw .1vw #65b4fa, .2vw 0vw .1vw #65b4fa, .4vw 0vw 0vw #65b4fa,
+      .1vw 0vw 1vw #65b4fa, .2vw 0vw 2vw #65b4fa, .4vw 0vw 2vw #65b4fa, .2vw 0vw 5vw #65b4fa,
+      .1vw 0vw .5vw #08f, .2vw 0vw .5vw #08f, .4vw 0vw 6vw #08f,
+      .1vw 0vw 4vw #08f, .2vw 0vw 20vw #08f, .4vw 0vw 10vw #08f,
+      .1vw 0vw 10vw #08f, .2vw 0vw 30vw #08f, .4vw 0vw 10vw #08f;
+    }
+
+.glow_box {
+  grid-area: glow_box;
+  background: linear-gradient(314deg, rgb(27, 201, 216), rgb(212, 129, 227), rgb(216, 187, 222)) 0% 0% / 300% 300%;
+  animation: CustomAnimation 13s ease infinite;
+  color: #171717;
+  height: 550px;
+  width: 80vw;
+  margin: 0 auto;
+}
+
+@keyframes CustomAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 26rem;
+  height: 26rem;
+  top:0;left:0;bottom:0;right:0;
+  margin: auto;
+  border-radius: 50%;
+  animation: giro 30s infinite linear;
+  font-family: monospace;
+}
+.circle > span:first-child {
+  transform: translatex(13rem);
+}
+span {
+  width: 0;
+  height: 26rem;
+  position: absolute;
+  top: 0rem; left; 0;
+  font-size: 6rem;
+  text-align: left;
+  line-height: 0;
+  transform: rotate(24deg);
+  vertical-align: top;
+  transform-style: preserve-3d;
+}
+
+@keyframes giro {
+  100% {transform: rotate(1turn)}
+}
+
+.footer {
+  grid-area: footer;
+  margin-top: 20px;
+  text-align: right;
+}
+
+.footer a {
+  text-decoration: none;
+  transition: .5s ease all;
+}
+
+.footer a:hover {
+  /* -webkit-transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+  /* transform: matrix3d(0.77,0,-0.64,-.001,0.00,1,0.00,0,0.64,0,0.77,0,0,0,0,1); */
+  margin-top: 20px;
+  margin-left: 20px;
+  color: #b4dcff;
+  font-family: clipneon;
+  font-size: 5vw;
+  line-height: 6vw;
+  margin-right: 2vw;
+  text-shadow:
+  .1vw 0vw .25vw #b4dcff, .2vw 0vw .25vw #b4dcff, .4vw 0vw .25vw #b4dcff,
+  .1vw 0vw .1vw #65b4fa, .2vw 0vw 0vw #65b4fa, .4vw 0vw 0vw #65b4fa,
+  .1vw 0vw .1vw #65b4fa, .2vw 0vw .1vw #65b4fa, .4vw 0vw 0vw #65b4fa,
+  .1vw 0vw 1vw #65b4fa, .2vw 0vw 2vw #65b4fa, .4vw 0vw 2vw #65b4fa, .2vw 0vw 5vw #65b4fa,
+  .1vw 0vw .5vw #08f, .2vw 0vw .5vw #08f, .4vw 0vw 6vw #08f,
+  .1vw 0vw 4vw #08f, .2vw 0vw 20vw #08f, .4vw 0vw 10vw #08f,
+  .1vw 0vw 10vw #08f, .2vw 0vw 30vw #08f, .4vw 0vw 10vw #08f;
+}
