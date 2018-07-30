@@ -21,15 +21,15 @@ var body = document.querySelector('body')
 citySelect.addEventListener('change', function() {
   if (citySelect.options.selectedIndex == 0) {
     body.className = ''
-  } else if (citySelect.options.selectedIndex == 1) {
+  } else if (event.target.value == 'NYC') {
     body.className = 'nyc'
-  } else if (citySelect.options.selectedIndex == 2) {
+  } else if (event.target.value == 'SF') {
     body.className = 'sf'
-  } else if (citySelect.options.selectedIndex == 3) {
+  } else if (event.target.value == 'LA') {
     body.className = 'la'
-  } else if (citySelect.options.selectedIndex == 4) {
+  } else if (event.target.value == 'SYD') {
     body.className = 'sydney'
-  } else if (citySelect.options.selectedIndex == 5) {
+  } else if (event.target.value== 'ATX') {
     body.className = 'austin'
   }
 })
