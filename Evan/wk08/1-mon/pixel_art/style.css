@@ -1,0 +1,44 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #1a0546;
+  color: white;
+  font-family: sans-serif;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+button {
+  width: 40px;
+}
+
+input, button {
+  height: 30px;
+  border: none;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  transition: .4s ease all;
+  text-align: center;
+  font-weight: bold;
+}
+
+input:focus, button:focus, input:hover, button:hover {
+  outline: none;
+  background-color: #dec2ff;
+}
+
+.current_color {
+  border: 2px solid white;
+  background-color: rgb(246, 128, 227);
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+}

@@ -1,0 +1,14 @@
+body {
+  background-color: #1a023c;
+  color: #ee80fb;
+  font-family: Helvetica, sans-serif;
+  border-right: 4px solid white;
+  border-top: 4px solid white;
+}
+
+.gifs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
