@@ -1,0 +1,10 @@
+<h1>update <%= @bike.name %></h1>
+
+<form action="/bikes/<%= @bike.id %>" method="post">
+  <input type="hidden" name="_method" value="put">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <span>name</span><input type="text" name="name" value="<%= @bike.name %>"><br>
+  <span>image url</span><input type="text" name="image_url" value="<%= @bike.image_url %>"><br>
+  <span>description</span></sp><input type="text" name="description" value="<%= @bike.description %>"><br>
+  <button>update</button>
+</form>

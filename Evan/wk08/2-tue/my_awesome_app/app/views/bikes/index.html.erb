@@ -1,0 +1,19 @@
+<h1>index - bikes</h1>
+
+<a href="/bikes/new">new</a>
+
+<form action="/bikes" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <span>name</span><input type="text" name="name" value="<%= @bike.name %>"><br>
+  <span>image url</span><input type="text" name="image_url" value="<%= @bike.image_url %>"><br>
+  <span>description</span></sp><input type="text" name="description" value="<%= @bike.description %>"><br>
+  <button>create</button>
+</form>
+
+<% @bikes.each do |bike| %>
+
+  <p><a href="/bikes/<%= bike.id %>"><%= bike.name %></a></p>
+  <img src="<%= bike.image_url %>" width="600px">
+  <p><%= bike.description %></p>
+
+<% end %>
