@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+ /*
+ font-family: 'Carter One', cursive;
+ font-family: 'Permanent Marker', cursive;
+ font-family: 'Shrikhand', cursive;
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ff71e6;
+  color: black;
+  font-size: 125%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Carter One', cursive;
+  width: 600px;
+  text-align: center;
+}
+
+.bike_card {
+  background-color: #aaf1fa;
+  width: 600px;
+  margin-bottom: 25px;
+}
+
+.bike_card img {
+  width: 600px;
+}
+
+.bike_card a {
+  text-decoration: none;
+  color: black;
+}
+
+form {
+  border: 5px solid white;
+  background-color: #aaf1fa;
+  width: 600px;
+  margin-bottom: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+form input, button {
+  background-color: white;
+  border: none;
+  height: 20px;
+  font-weight: bold;
+  font-size: 100%;
+}
+
+form input:focus {
+  outline: none;
+  background-color: #fec6ff;
+  transition: .2s ease all;
+}
+
+form button {
+  font-family: 'Carter One', cursive;
+  height: 30px;
+}
+
+form span {
+  font-family: 'Carter One', cursive;
+}
