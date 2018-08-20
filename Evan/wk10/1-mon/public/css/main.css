@@ -1,0 +1,17 @@
+body {
+  font-size: 250%;
+  font-family: 'ITC Souvenir', 'Helvetica', sans-serif;
+  color: #d9ff1d;
+  -webkit-text-stroke: 1px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
