@@ -3,4 +3,4 @@ function reload() {
   location.reload()
 }
 
-setTimeout(reload, 1000)
+setTimeout(reload, 1500)
