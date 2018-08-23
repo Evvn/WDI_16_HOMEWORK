@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.bar-wrapper {
+  border: 5px solid black;
+  width: 80vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+
+span {
+  font-weight: bold;
+  font-size: 250%;
+  width: 80vw;
+  text-align: center;
+  position: absolute;
+}
+
+.bar {
+  background-color: #FF0000;
+  height: 65px;
+  transition: .4s ease all;
+}

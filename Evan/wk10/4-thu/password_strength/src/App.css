@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  font-family: 'ITC Souvenir', sans-serif;
+}
+
+.checkPassword {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+body {
+  background-color: #7bc0e3;
+}
+
+h1 {
+  font-size: 450%;
+  color: #f9b748;
+  -webkit-text-stroke: 1px black;
+}
+
+input {
+  width: 80vw;
+  border: 5px solid black;
+  margin: 25px auto;
+  height: 70px;
+  font-size: 450%;
+  font-weight: bold;
+  text-align: center;
+}
+
+input:focus {
+  outline: none;
+}
+
+.criteria {
+  font-size: 150%;
+  line-height: 5px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
